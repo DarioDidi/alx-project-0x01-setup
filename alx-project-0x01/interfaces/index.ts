@@ -16,6 +16,7 @@ export interface UserProps {
   company: Company;
 }
 
+//for User
 export interface Address {
   street: string;
   suite: string;
@@ -24,13 +25,29 @@ export interface Address {
   geo: Geo;
 }
 
+//for address
 export interface Geo {
   lat: string;
   lng: string;
 }
 
+//for User
 export interface Company {
   name: string;
   catchPhrase: string;
   bs: string;
 }
+
+
+export interface PostData {
+  userId: number;
+  id?: number;
+  title: string;
+  body: string;
+}
+
+export interface PostModalProps {
+  onClose: () => void;
+  onSubmit: (post: PostData) => void;
+}
+
