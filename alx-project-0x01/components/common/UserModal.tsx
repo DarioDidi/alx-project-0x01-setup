@@ -89,16 +89,18 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 			company: { ...prevUser.company, [name]: value },
 		}));
 	};
+
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		onSubmit(user);
 		onClose();
 	};
 
+	{/*<div className="fixed  bg-gray-900 bg-opacity-50 flex overflow-auto justify-center-safe inset-0  m-auto">*/ }
 	return (
-		<div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-			<div className="bg-white rounded-lg p-8 shadow-lg w-full max-w-md">
-				<h2 className="text-2xl font-bold mb-4 text-gray-800">Add New Post</h2>
+		<div className='fixed inset-0 bg-gray-900 bg-opacity-50 overflow-auto flex justify-center-safe  m-auto' >
+			<div className="bg-white rounded-lg p-8 shadow-lg w-full max-w-md overflow-scroll m-auto">
+				<h2 className="text-2xl font-bold mb-4 text-gray-800">Add New User</h2>
 				<form onSubmit={handleSubmit}>
 					<div className="mb-4">
 						<label htmlFor="userId" className="block text-gray-700 font-medium mb-2">User ID</label>
@@ -180,26 +182,27 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 							placeholder="Enter website url"
 						/>
 					</div>
-					htmlFor="" className="block text-gray-700 font-medium mb-2"
 					<div className="form-section">
-						<h3>Address</h3>
+						<h3 className="font-extrabold">Address Section</h3>
 						<div className="form-group">
-							<label htmlFor="address-suite" className="block text-gray-700 font-medium mb-2">Street:</label>
+							<label htmlFor="street" className="block text-gray-700 font-medium mb-2">Street:</label>
 							<input
 								type="text"
 								name="street"
 								value={user.address?.street}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 								required
 							/>
 						</div>
 						<div className="form-group">
-							<label htmlFor="address-suite" className="block text-gray-700 font-medium mb-2">Suite/Apt:</label>
+							<label htmlFor="suite" className="block text-gray-700 font-medium mb-2">Suite/Apt:</label>
 							<input
 								type="text"
 								name="suite"
 								value={user.address?.suite}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 						<div className="form-group">
@@ -210,6 +213,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								value={user.address?.city}
 								onChange={handleChange}
 								required
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 						<div className="form-group">
@@ -220,10 +224,11 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								value={user.address?.zipcode}
 								onChange={handleChange}
 								required
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 
-						<h4>Geo Location</h4>
+						<h4 className="font-extrabold">Geo Location Section</h4>
 						<div className="form-group">
 							<label htmlFor="address-latitude" className="block text-gray-700 font-medium mb-2">Latitude:</label>
 							<input
@@ -231,6 +236,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								name="lat"
 								value={user.address?.geo.lat}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 						<div className="form-group">
@@ -240,12 +246,13 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								name="lng"
 								value={user.address?.geo.lng}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 					</div>
 
 					<div className="form-section">
-						<h3>Company</h3>
+						<h3 className="font-extrabold">Company Section</h3>
 						<div className="form-group">
 							<label htmlFor="company-name" className="block text-gray-700 font-medium mb-2">Company Name:</label>
 							<input
@@ -254,6 +261,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								value={user.company?.name}
 								onChange={handleChange}
 								required
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 						<div className="form-group">
@@ -263,6 +271,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								name="catchPhrase"
 								value={user.company?.catchPhrase}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 						<div className="form-group">
@@ -272,6 +281,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								name="bs"
 								value={user.company?.bs}
 								onChange={handleChange}
+								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
 					</div>
@@ -288,12 +298,12 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 							type="submit"
 							className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
 						>
-							Add Post
+							Add User
 						</button>
 					</div>
 				</form>
-			</div>
-		</div>
+			</div >
+		</div >
 	);
 }
 
