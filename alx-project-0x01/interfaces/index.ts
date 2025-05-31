@@ -4,18 +4,6 @@ export interface PostProps {
   title: string;
   body: string;
 }
-
-export interface UserProps {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-}
-
 //for User
 export interface Address {
   street: string;
@@ -38,6 +26,17 @@ export interface Company {
   bs: string;
 }
 
+export interface UserProps {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company;
+}
+
 
 export interface PostData {
   userId: number;
@@ -51,15 +50,45 @@ export interface PostModalProps {
   onSubmit: (post: PostData) => void;
 }
 
+export interface GeoData {
+  lat: string;
+  lng: string;
+}
+
+export interface AddressData {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: GeoData;
+}
+
+export interface CompanyData {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+
+//export interface UserData {
+//  id: number;
+//  name: string;
+//  username: string;
+//  email: string;
+//  address?: AddressData;
+//  phone?: string;
+//  website?: string;
+//  company?: CompanyData;
+//}
+
 export interface UserData {
-  id: number;
+  id?: number;
   name: string;
   username: string;
   email: string;
-  address?: Address;
-  phone?: string;
-  website?: string;
-  company?: Company;
+  address: AddressData;
+  phone: string;
+  website: string;
+  company: CompanyData;
 }
 
 export interface UserModalProps {

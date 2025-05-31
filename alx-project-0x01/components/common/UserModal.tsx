@@ -94,9 +94,9 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 		e.preventDefault();
 		onSubmit(user);
 		onClose();
+		console.log(user)
 	};
 
-	{/*<div className="fixed  bg-gray-900 bg-opacity-50 flex overflow-auto justify-center-safe inset-0  m-auto">*/ }
 	return (
 		<div className='fixed inset-0 bg-gray-900 bg-opacity-50 overflow-auto flex justify-center-safe  m-auto' >
 			<div className="bg-white rounded-lg p-8 shadow-lg w-full max-w-md overflow-scroll m-auto">
@@ -190,7 +190,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="street"
 								value={user.address?.street}
-								onChange={handleChange}
+								onChange={handleAddressChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 								required
 							/>
@@ -201,7 +201,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="suite"
 								value={user.address?.suite}
-								onChange={handleChange}
+								onChange={handleAddressChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
@@ -211,7 +211,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="city"
 								value={user.address?.city}
-								onChange={handleChange}
+								onChange={handleAddressChange}
 								required
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
@@ -222,7 +222,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="zipcode"
 								value={user.address?.zipcode}
-								onChange={handleChange}
+								onChange={handleAddressChange}
 								required
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
@@ -235,7 +235,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="lat"
 								value={user.address?.geo.lat}
-								onChange={handleChange}
+								onChange={handleGeoChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
@@ -245,7 +245,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="lng"
 								value={user.address?.geo.lng}
-								onChange={handleChange}
+								onChange={handleGeoChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
@@ -259,7 +259,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="name"
 								value={user.company?.name}
-								onChange={handleChange}
+								onChange={handleCompanyChange}
 								required
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
@@ -270,7 +270,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="catchPhrase"
 								value={user.company?.catchPhrase}
-								onChange={handleChange}
+								onChange={handleCompanyChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>
@@ -280,7 +280,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 								type="text"
 								name="bs"
 								value={user.company?.bs}
-								onChange={handleChange}
+								onChange={handleCompanyChange}
 								className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
 							/>
 						</div>

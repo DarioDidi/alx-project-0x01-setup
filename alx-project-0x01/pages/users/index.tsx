@@ -14,9 +14,9 @@ const Users: React.FC<UserProps[]> = ({ /*users*/ posts }) => {
   }
   console.log(posts);
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen no-doc-scroll">
       <Header />
-      <main className="" p-4>
+      <main className="p-4">
         <div className="flex justify-between">
           <h1 className="text-2xl font-semibold">User Content</h1>
           <button onClick={() => setModalOpen(true)} className="bg-blue-700 px-4 py-2 rounded-full text-white">Add User</button>
